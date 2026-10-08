@@ -1,0 +1,508 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    min-height: 70px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 7%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #087f8c;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #087f8c;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+        center/cover no-repeat;
+
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: #087f8c;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #065f68;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    padding: 60px 7%;
+    background: white;
+}
+
+.dashboard h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #f5f7fb;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card span {
+    font-size: 35px;
+}
+
+.card h3 {
+    font-size: 25px;
+    margin: 8px 0;
+    color: #087f8c;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 25px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label,
+.document-box label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.document-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.document-box input:focus {
+    border-color: #087f8c;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+/* =========================
+   TRIP CARDS
+========================= */
+
+.trip-list {
+    display: grid;
+    gap: 20px;
+}
+
+.trip-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #087f8c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.trip-card h3 {
+    color: #087f8c;
+    margin-bottom: 10px;
+}
+
+.trip-card p {
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.delete-btn:hover {
+    background: #b52b27;
+}
+
+
+/* =========================
+   EXPENSES
+========================= */
+
+.expense-summary {
+    background: #087f8c;
+    color: white;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.expense-summary h3 {
+    font-size: 20px;
+}
+
+#expenseTotal {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#expenseList {
+    display: grid;
+    gap: 15px;
+}
+
+.expense-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.expense-item h4 {
+    color: #087f8c;
+}
+
+
+/* =========================
+   DOCUMENTS
+========================= */
+
+.document-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.document-box input {
+    margin-bottom: 15px;
+}
+
+#documentList {
+    margin-top: 25px;
+    display: grid;
+    gap: 15px;
+}
+
+.document-item {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+.empty {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #12343b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #ddd;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .section {
+        padding: 50px 18px;
+    }
+
+    .section h2 {
+        font-size: 27px;
+    }
+
+    .expense-item,
+    .document-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Management App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">✈️ TravelMate</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#planner">Trip Planner</a>
+            <a href="#trips">My Trips</a>
+            <a href="#expenses">Expenses</a>
+            <a href="#documents">Documents</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+
+    <!-- Home -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Plan Your Perfect Journey</h1>
+
+            <p>
+                Manage your trips, bookings, expenses and
+                travel documents in one place.
+            </p>
+
+            <a href="#planner" class="btn">
+                Start Planning
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+
+        <h2>Travel Dashboard</h2>
+
+        <div class="dashboard-grid">
+
+            <div class="card">
+                <span>🌍</span>
+                <h3 id="totalTrips">0</h3>
+                <p>Total Trips</p>
+            </div>
+
+            <div class="card">
+                <span>📅</span>
+                <h3 id="upcomingTrips">0</h3>
+                <p>Upcoming Trips</p>
+            </div>
+
+            <div class="card">
+                <span>💰</span>
+                <h3 id="totalBudget">Rs. 0</h3>
+                <p>Total Budget</p>
+            </div>
+
+            <div class="card">
+                <span>💳</span>
+                <h3 id="totalExpense">Rs. 0</h3>
+                <p>Total Expenses</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Trip Planner -->
+    <section id="planner" class="section">
+
+        <h2>🗺️ Plan Your Trip</h2>
+
+        <form id="tripForm">
+
+            <div class="form-group">
+
+                <label>Destination</label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="e.g. Dubai"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Start Date</label>
+
+                    <input
+                        type="date"
+                        id="startDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>End Date</label>
+
+                    <input
+                        type="date"
+                        id="endDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Travelers</label>
+
+                    <input
+                        type="number"
+                        id="travelers"
+                        min="1"
+                        value="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Budget (PKR)</label>
+
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="150000"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Travel Type</label>
+
+                <select id="travelType">
+
+                    <option value="Family">Family Trip</option>
+                    <option value="Solo">Solo Trip</option>
+                    <option value="Business">Business Trip</option>
+                    <option value="Couple">Couple Trip</option>
+                    <option value="Friends">Friends Trip</option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit" class="btn">
+                ➕ Add Trip
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- My Trips -->
+    <section id="trips" class="section">
+
+        <h2>🧳 My Trips</h2>
+
+        <div id="tripList" class="trip-list">
+
+            <p class="empty">
+                No trips added yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Expenses -->
+    <section id="expenses" class="section">
+
+        <h2>💰 Expense Manager</h2>
+
+        <form id="expenseForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Expense Name</label>
+
+                    <input
+                        type="text"
+                        id="expenseName"
+                        placeholder="Hotel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Amount (PKR)</label>
+
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="5000"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <select id="expenseCategory">
+
+                    <option>Hotel</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Shopping</option>
+                    <option>Flight</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit" class="btn">
+                ➕ Add Expense
+            </button>
+
+        </form>
+
+
+        <div class="expense-summary">
+
+            <h3>Total Expenses</h3>
+
+            <div id="expenseTotal">
+                Rs. 0
+            </div>
+
+        </div>
+
+
+        <div id="expenseList">
+
+            <p class="empty">
+                No expenses added yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Travel Documents -->
+    <section id="documents" class="section">
+
+        <h2>📄 Travel Documents</h2>
+
+        <div class="document-box">
+
+            <label>Document Name</label>
+
+            <input
+                type="text"
+                id="documentName"
+                placeholder="Passport / Visa / Ticket"
+            >
+
+            <button
+                class="btn"
+                onclick="addDocument()"
+            >
+                Add Document
+            </button>
+
+        </div>
+
+
+        <div id="documentList">
+
+            <p class="empty">
+                No documents added.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>✈️ TravelMate</h3>
+
+        <p>
+            Your simple travel management solution.
+        </p>
+
+        <p>
+            © 2026 TravelMate. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
